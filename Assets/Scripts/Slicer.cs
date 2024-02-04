@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Slicer : MonoBehaviour
 {
-    Rigidbody rb;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); 
+        rb = GetComponent<Rigidbody2D>(); 
     }
 
     // Update is called once per frame
@@ -17,12 +17,13 @@ public class Slicer : MonoBehaviour
         var worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = worldPos;
 
-        worldPos.z = 0;
+        worldPos.z = 2;
         rb.MovePosition(worldPos);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(other.gameObject);
+        Destroy(collision.gameObject);
+        print("yes");
     }
 }

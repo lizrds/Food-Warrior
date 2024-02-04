@@ -18,7 +18,7 @@ public class Fruit : MonoBehaviour
     {
         if(transform.position.y < 0)
         {
-            print("fail");
+            
         }
     }
 }

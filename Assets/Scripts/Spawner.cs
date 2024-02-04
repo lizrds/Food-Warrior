@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject fruit;
+    public int spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,9 @@ public class Spawner : MonoBehaviour
     }
     void Spawn()
     {
+        spawn = Random.Range(-3, 3);
         var obj = Instantiate(fruit);
-        obj.transform.position = new Vector3(0, 0, 1);
+        obj.transform.position = new Vector3(spawn, 0, 2);
+        print(spawn.ToString());
     }
 }
